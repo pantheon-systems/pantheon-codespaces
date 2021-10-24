@@ -1,12 +1,6 @@
 <?php
 //Local development environment config file
 
-// Add for Codespaces Apache setup
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
-    $_SERVER['HTTPS']='on';
-}
-
 // ** Local MySQL settings ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'drupal');

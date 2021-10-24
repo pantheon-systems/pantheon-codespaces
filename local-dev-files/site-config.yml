@@ -1,2 +1,3 @@
-site_name: rush-limbaugh
-default_environment: dev
+site_name: pantheon-codespaces-wordpress-example
+default_environment: live
+framework: wordpress
