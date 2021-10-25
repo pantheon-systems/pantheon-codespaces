@@ -5,10 +5,10 @@
 # Change dir to Codespace home
 cd /workspaces/$(echo $RepositoryName)
 # Add local dev commands to terminal path
-SOURCE_PREFIX="PATH=\"$(pwd)/.devcontainer/src/pantheon-commands"
+SOURCE_PREFIX="PATH=\"/workspaces/$(echo $RepositoryName)/.devcontainer/src/pantheon-commands"
 SOURCE_SUFFIX=':$PATH"'
 echo "$(echo $SOURCE_PREFIX)$(echo $SOURCE_SUFFIX)" >> ~/.bashrc
-echo "alias repair-codespace=\"/workspaces/$(echo $RepositoryName)/.devcontainer/src/init-codespace.sh\"" >> ~/.bashrc
+echo "alias repair-codespace=\"/workspaces/$(echo $RepositoryName)/.devcontainer/src/codespaces-environment/init-codespace.sh\"" >> ~/.bashrc
 echo "alias uli=\"drush uli --uri=https://$CODESPACE_NAME-8080.githubpreview.dev\"" >> ~/.bashrc
 echo "export CODESPACE_URL=\"$CODESPACE_NAME-8080.githubpreview.dev\"" >> ~/.bashrc
 # Add local vendor/bin to allow drush to PATH
