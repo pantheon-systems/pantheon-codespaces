@@ -45,10 +45,6 @@ EOF
 # Start up mysql and initialize dev user.
 sudo service mysql start
 bash .devcontainer/src/mysql-init.sh
-# Copy over local settings to Drupal codebase.
-cp .devcontainer/src/settings.local.php web/sites/default/settings.local.php
-# Copy over wordpress settings
-cp .devcontainer/src/wp-config-local.php wp-config-local.php
 # Copy over xdebug config
 sudo cp .devcontainer/src/20-xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 # Start up apache.

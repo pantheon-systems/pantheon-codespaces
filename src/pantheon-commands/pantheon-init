@@ -30,3 +30,12 @@ EOF
 
 # Print confirmation
 echo "Initialized a site-config.yml for $site_name.$default_environment - Framework: $framework"
+
+read -p "Need to copy over Drupal / WP config files, such as settings.local.php / wp-config-local.php?" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Going to initialize for $framework"
+    $(./$framework/init-$framework.sh)
+
+fi
