@@ -22,7 +22,7 @@ read default_environment
 # Get the site framework
 framework=$(terminus site:info $site_name --field="Framework")
 
-sudo cat > .devcontainer/local-dev-files/site-config.yml <<EOF
+sudo cat > .devcontainer/site-config.yml <<EOF
 site_name: $site_name
 default_environment: $default_environment
 framework: $framework
