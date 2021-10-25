@@ -1,6 +1,6 @@
 {
-    "site_name": "pantheon-codespaces-wordpress-example",
-    "site_environment": "live",
-    "framework": "wordpress"
+    "site_name": "pantheon-codespaces-drupal-example",
+    "site_environment": "dev",
+    "framework": "drupal8"
 }
 
