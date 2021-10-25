@@ -8,3 +8,6 @@ function get_site_name_from_config() {
 function get_site_env_from_config() {
     cat /workspaces/$RepositoryName/.devcontainer/site-config.json | jq .site_environment -r
 }
+function get_site_framework_from_config() {
+    cat /workspaces/$RepositoryName/.devcontainer/site-config.json | jq .framework -r
+}
