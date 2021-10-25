@@ -44,9 +44,9 @@ sudo cat > /etc/apache2/sites-available/000-default.conf <<EOF
 EOF
 # Start up mysql and initialize dev user.
 sudo service mysql start
-bash .devcontainer/src/mysql-init.sh
+bash .devcontainer/src/codespaces-environment/mysql-init.sh
 # Copy over xdebug config
-sudo cp .devcontainer/src/20-xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
+sudo cp .devcontainer/src/codespaces-environment/20-xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 # Start up apache.
 sudo apachectl start
 # Add ssh key for usage.

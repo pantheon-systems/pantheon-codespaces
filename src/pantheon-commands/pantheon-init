@@ -17,19 +17,22 @@ read site_name
 
 # Prompt for default environment
 echo Default environment to clone from:
-read default_environment
+read site_environment
 
 # Get the site framework
 framework=$(terminus site:info $site_name --field="Framework")
 
-sudo cat > .devcontainer/site-config.yml <<EOF
-site_name: $site_name
-default_environment: $default_environment
-framework: $framework
+sudo cat > /workspaces/$(echo $RepositoryName)/.devcontainer/site-config.json <<EOF
+{
+    "site_name": "$site_name",
+    "site_environment": "$site_environment",
+    "framework": "$framework"
+}
+
 EOF
 
 # Print confirmation
-echo "Initialized a site-config.yml for $site_name.$default_environment - Framework: $framework"
+echo "Initialized a site-config.json for $site_name.$site_environment - Framework: $framework"
 
 read -p "Need to copy over Drupal / WP config files, such as settings.local.php / wp-config-local.php?" -n 1 -r
 echo    # (optional) move to a new line

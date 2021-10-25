@@ -15,10 +15,10 @@ A GitHub Codespaces setup for use with Pantheon.
 ## Configuring the environment
 - Simply type the shortcut command `pantheon-init` in the terminal to be prompted through some basic configuration for terminus.
 - In the terminal, the terminus command line tool is preinstalled, as is composer.
-- A `site-config.yml` is created in the `src` folder through the `pantheon-init` process which keeps track of the Pantheon site environment associated with the Codespace and repo.
+- A `site-config.json` is created in the `src` folder through the `pantheon-init` process which keeps track of the Pantheon site environment associated with the Codespace and repo.
 
 ## Setting up Wordpress
-- There is a script in `wp-utils` called `search-replace` that should use the bash environment variables of the Codespace to provide a wp search-replace command. It uses the `site-config.yml` in the `.devcontainer` folder to use as the "old" URL to replace with the "new" codespaces URL. So this assumes the flow of `pantheon-syncdb` to bring in the defined site DB, and then the search-replace can run subsequently to swap out the Codespace urls.
+- There is a script in `wp-utils` called `search-replace` that should use the bash environment variables of the Codespace to provide a wp search-replace command. It uses the `site-config.json` in the `.devcontainer` folder to use as the "old" URL to replace with the "new" codespaces URL. So this assumes the flow of `pantheon-syncdb` to bring in the defined site DB, and then the search-replace can run subsequently to swap out the Codespace urls.
 
 ## Where to find, add, and customize terminal commands.
 - The `PATH` is set in the container to include commands defined in the `.devcontainer/src/pantheon-commands` folder.

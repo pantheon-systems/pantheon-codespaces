@@ -1,13 +1,3 @@
-SITE_NAME=$(php <<"EOF"
-<?php
-$site_data = yaml_parse_file(__DIR__ . "/.devcontainer/site-config.yml");
-echo $site_data['site_name'];
-EOF
-)
-SITE_ENV=$(php <<"EOF"
-<?php
-$site_data = yaml_parse_file(__DIR__ . "/.devcontainer/site-config.yml");
-echo $site_data['default_environment'];
-EOF
-)
+source /workspaces/$(echo $RepositoryName)/.devcontainer/src/pantheon-commands/common_functions
+SITE_NAME=$(get_site_name_from_config)
 terminus env:deploy $SITE_NAME.live --note="${@:1}"
