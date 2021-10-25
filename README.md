@@ -25,3 +25,7 @@ A GitHub Codespaces setup for use with Pantheon.
 
 ## Troubleshooting
 - One simple method of troubleshooting is running the `repair-codespace` command in the terminal. This will run the `init-codespace.sh` script, ensuring the Codespace Apache and MySQL processes are running and configured properly.
+
+# Devcontainer development notes
+- You can use the Codespaces environment variables to write predictable scripts.
+- For instance, to get a reference to the default workspace name - `/workspaces/$(echo $RepositoryName)`
