@@ -4,7 +4,7 @@ A GitHub Codespaces setup for use with Pantheon.
 ## Secret Configuration
 - You can configure Secrets for individual Codespaces, and add Secrets that are org wide across all Codespaces. The following Secrets should be configured to ensure all functionality of pantheon-codespaces:
 
-* `SSH_KEY` - A private SSH key that has a public equivalent added to your Pantheon profile under the "SSH" settings. Pro tip: You can bypass the SSH setup initially, and start up the pantheon-codespace first. Then, use the terminal to run `ssh-keygen` and generate the SSH key pair on the Codespace itself.
+* `SSH_KEY` - A private SSH key that has a public equivalent added to your Pantheon profile under the "SSH" settings. Pro tip: You can bypass the SSH setup initially, and start up the pantheon-codespace first. We recommend using the PEM format for the key. When the Codespace loads, use the terminal to run `ssh-keygen -m PEM` and generate the SSH key pair on the Codespace itself. Once terminus is configured, you can use `terminus ssh-key:add ~/.ssh/path_to_key.pub` to add the public key to your Pantheon account. Then, use `cat ~/.ssh/path_to_key` to print out the private key, copy it from the terminal, and paste into the `SSH_KEY` Secret configuration in the repo Codespace Secret settings.
 
 ## Setup for an existing project.
 - Assuming your project is in GitHub and you are configured to run Codespaces. For more information on this, see the Codespaces site regarding setting up Codespaces.
