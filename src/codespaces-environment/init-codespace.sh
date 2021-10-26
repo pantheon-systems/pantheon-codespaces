@@ -26,23 +26,7 @@ pantheon-install-terminus > /dev/null 2>&1
 PROJECT_NAME=$(pwd)
 echo "Initializing $PROJECT_NAME" 
 sudo chmod o+rw /etc/apache2/sites-available/000-default.conf
-sudo cat > /etc/apache2/sites-available/000-default.conf <<EOF
-<VirtualHost *:8080>
-  DocumentRoot $PROJECT_NAME
-  <Directory $PROJECT_NAME>
-    Options FollowSymLinks
-    AllowOverride All
-    DirectoryIndex index.php
-    Require all granted
-  </Directory>
-  <Directory $PROJECT_NAME/wp-content>
-      Options FollowSymLinks
-      Require all granted
-  </Directory>
-  ErrorLog ${APACHE_LOG_DIR}/error.log
-  CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-EOF
+
 
 # Start up mysql and initialize dev user.
 sudo service mysql start
