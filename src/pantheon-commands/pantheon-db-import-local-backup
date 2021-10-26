@@ -10,7 +10,7 @@ if [ "$FRAMEWORK" = "wordpress" ]; then
 fi
 
 if [ "$FRAMEWORK" = "drupal" ]; then
-    vendor/bin/drush sqlc < $PATH_TO_BACKUP
+    drush sqlc < $PATH_TO_BACKUP
 fi
 
 
