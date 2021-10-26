@@ -21,7 +21,7 @@ A GitHub Codespaces setup for use with Pantheon.
 - The `PATH` is set in the container to include commands defined in the `.devcontainer/src/pantheon-commands` folder.
 
 ## Setting up Wordpress
-- There is a script in the `pantheon-commands` directory called `pantheon-search-replace` that should use the bash environment variables of the Codespace to provide a wp search-replace command. It uses the `site-config.json` in the `.devcontainer` folder to use as the "old" URL to replace with the "new" codespaces URL. So this assumes the flow of `pantheon-db-pull` to bring in the defined site DB, and then the search-replace can run subsequently to swap out the Codespace urls.
+- There is a script in the `pantheon-commands` directory called `pantheon-wp-search-replace` that should use the bash environment variables of the Codespace to provide a wp search-replace command. It uses the `site-config.json` in the `.devcontainer` folder to use as the "old" URL to replace with the "new" codespaces URL. So this assumes the flow of `pantheon-db-pull` to bring in the defined site DB, and then the search-replace can run subsequently to swap out the Codespace urls.
 
 ## Troubleshooting
 - One simple method of troubleshooting is running the `repair-codespace` command in the terminal. This will run the `init-codespace.sh` script, ensuring the Codespace Apache and MySQL processes are running and configured properly.
