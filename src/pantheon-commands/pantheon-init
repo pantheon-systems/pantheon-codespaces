@@ -1,5 +1,5 @@
 echo "Setting up for Pantheon integration"
-read -p "Reinitialize terminus (enter a new machine token)? " -n 1 -r
+read -p "Reinitialize terminus by entering a new machine token? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -34,7 +34,7 @@ EOF
 # Print confirmation
 echo "Initialized a site-config.json for $site_name.$site_environment - Framework: $framework"
 
-read -p "Need to copy over Drupal / WP config files, such as settings.local.php / wp-config-local.php?" -n 1 -r
+read -p "Do you need to copy over Drupal / WP config files, such as settings.local.php / wp-config-local.php? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
