@@ -11,8 +11,12 @@ fi
 
 if [ "$FRAMEWORK" = "drupal" ]; then
     drush sqlc < $PATH_TO_BACKUP
+    drush cc all
 fi
 
 if [ "$FRAMEWORK" = "drupal8" ]; then
     drush sqlc < $PATH_TO_BACKUP
+    drush cr
 fi
+
+
