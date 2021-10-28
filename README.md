@@ -6,6 +6,13 @@ A GitHub Codespaces setup for use with Pantheon.
 * [Codespaces](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/enabling-codespaces-for-your-organization) enabled for your organization.
 * [A Pantheon Site](https://dashboard.pantheon.io)
 
+## Supports
+* Drupal 7
+* Drupal 8
+* Drupal 9
+* WordPress
+* WordPress Networks
+
 ## Setup for an existing project.
 - Navigate to the main page of your repository. Under the repository name, use the `Code` drop-down menu, and in the `Codespaces` tab, click `New codespace`.
 - Once the Codespace loads up, open the main menu by clicking the icon in the top left. Go to View and click Terminal to open up the terminal. You can clone this repo into your project into the `.devcontainer` folder by typing `git clone [this repo url] .devcontainer`
@@ -27,6 +34,7 @@ A GitHub Codespaces setup for use with Pantheon.
 
 ## Setting up Wordpress
 - There is a script in the `pantheon-commands` directory called `pantheon-wp-search-replace` that should use the bash environment variables of the Codespace to provide a wp search-replace command. It uses the `site-config.json` in the `.devcontainer` folder to use as the "old" URL to replace with the "new" codespaces URL. So this assumes the flow of `pantheon-db-pull` to bring in the defined site DB, and then the search-replace can run subsequently to swap out the Codespace urls.
+- If you are running a WordPress network, use `pantheon-wp-network-search-replace` rather than the search-replace command noted above.
 
 ## Troubleshooting
 - One simple method of troubleshooting is running the `repair-codespace` command in the terminal. This will run the `init-codespace.sh` script, ensuring the Codespace Apache and MySQL processes are running and configured properly.
