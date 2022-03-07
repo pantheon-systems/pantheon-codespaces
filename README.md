@@ -1,6 +1,8 @@
 # pantheon-codespaces
 A GitHub Codespaces setup for use with Pantheon.
 
+[![Unofficial](https://img.shields.io/badge/Pantheon-Unofficial-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#unofficial)
+
 ## Secret Configuration
 - You can configure Secrets for individual Codespaces, and add Secrets that are org wide across all Codespaces. The following Secrets should be configured to ensure all functionality of pantheon-codespaces:
 
